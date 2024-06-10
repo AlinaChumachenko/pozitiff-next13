@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-display: swap;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/fonts/roboto-v30-cyrillic-regular.woff2")
+      format("woff2");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../public/fonts/rubik-v28-cyrillic-500.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Saira Extra Condensed";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/fonts/saira-extra-condensed-v13-latin-regular.woff2")
+      format("woff2");
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/fonts/lato-v24-latin-regular.woff2") format("woff2");
+  }
+
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: theme("borderColor.DEFAULT", currentColor);
+  }
+  body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  body:has(div.modal-open) {
+    overflow: hidden;
+  }
+
+  h2,
+  h3 {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+  }
+
+  ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 1s ease-out;
+}
